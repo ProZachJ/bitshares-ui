@@ -129,11 +129,11 @@ class Invoice extends React.Component {
             console.log("-- Invoice.render balances -->", balances.get(this.state.asset.get("id")));
             balance = balances.get(this.state.asset.get("id"));
         }
-        let items = invoice.line_items.map( i => {
+        let items = invoice.line_items.map( (i,k) => {
             let price = this.parsePrice(i.price);
             let amount = i.quantity * price;
             return (
-                <tr key={Math.random()}>
+              <tr key={k}>
                     <td>
                         <div className="item-name">{i.label}</div>
                         <div className="item-description">{i.quantity} x {<FormattedAsset amount={i.price} asset={asset} exact_amount={true}/>}</div>

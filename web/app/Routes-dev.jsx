@@ -87,7 +87,7 @@ const routes = (
 
         <Route path="transfer" component={Transfer}/>
 
-        <Route path="invoice/:data" component={Invoice} />
+        <Route path="invoice" component={Invoice} />
         <Route path="explorer/markets" component={MarketsContainer} />
         <Route path="market/:marketID" component={ExchangeContainer} />
         <Route path="settings" component={SettingsContainer} />

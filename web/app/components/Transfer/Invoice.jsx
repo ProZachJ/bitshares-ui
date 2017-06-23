@@ -133,7 +133,7 @@ class Invoice extends React.Component {
             let price = this.parsePrice(i.price);
             let amount = i.quantity * price;
             return (
-                <tr>
+                <tr key={Math.random()}>
                     <td>
                         <div className="item-name">{i.label}</div>
                         <div className="item-description">{i.quantity} x {<FormattedAsset amount={i.price} asset={asset} exact_amount={true}/>}</div>

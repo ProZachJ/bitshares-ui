@@ -78,7 +78,9 @@ class Invoice extends React.Component {
             if(this.state.invoice.callback) {
                 let trx =  confirm_store_state.broadcasted_transaction;
                 let url = `${this.state.invoice.callback}?block=${trx.ref_block_num}&trx=${trx.id()}`;
-                window.location.href = url;
+                if (url.toLowerCase().startsWith("http")) {
+                  window.location.href = url;
+                }
             }
         }
     }
